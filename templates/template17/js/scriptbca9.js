@@ -790,7 +790,8 @@ if ($("#clock1").length) {
         if (seconds < 10) {
             seconds = "0" + seconds;
         }
-        var html = '<div class="box"><div><div class="time">' + days + '</div> <span>'+ $('#clock1').data('text-day') +'</span> </div></div><div class="box"><div><div class="time">' + hours + '</div> <span>'+ $('#clock1').data('text-hour') +'</span> </div></div><div class="box"><div><div class="time">' + minutes + '</div> <span>'+ $('#clock1').data('text-minute') +'</span> </div></div><div class="box"><div><div class="time">' + seconds + '</div> <span>'+ $('#clock1').data('text-second') +'</span> </div></div>';
+        // var html = '<div class="box"><div><div class="time">' + days + '</div> <span>'+ $('#clock1').data('text-day') +'</span> </div></div><div class="box"><div><div class="time">' + hours + '</div> <span>'+ $('#clock1').data('text-hour') +'</span> </div></div><div class="box"><div><div class="time">' + minutes + '</div> <span>'+ $('#clock1').data('text-minute') +'</span> </div></div><div class="box"><div><div class="time">' + seconds + '</div> <span>'+ $('#clock1').data('text-second') +'</span> </div></div>';
+        var html = '<div class="box"><div><div class="time">' + days + '</div> <span>'+ $('#clock1').data('text-day') +'</span> </div></div>';
         $('#clock1').html(html);
     }
     var time = $('#clock1').data('date');
@@ -807,9 +808,11 @@ if ($("#clock1").length) {
         }else{
             var $this = $(this).html(event.strftime(''
             + '<div class="box"><div><div class="time">%D</div> <span>'+ $('#clock1').data('text-day') +'</span> </div></div>'
-            + '<div class="box"><div><div class="time">%H</div> <span>'+ $('#clock1').data('text-hour') +'</span> </div></div>'
-            + '<div class="box"><div><div class="time">%M</div> <span>'+ $('#clock1').data('text-minute') +'</span> </div></div>'
-            + '<div class="box"><div><div class="time">%S</div> <span>'+ $('#clock1').data('text-second') +'</span> </div></div>'));
+            // + '<div class="box"><div><div class="time">%H</div> <span>'+ $('#clock1').data('text-hour') +'</span> </div></div>'
+            // + '<div class="box"><div><div class="time">%M</div> <span>'+ $('#clock1').data('text-minute') +'</span> </div></div>'
+            // + '<div class="box"><div><div class="time">%S</div> <span>'+ $('#clock1').data('text-second') +'</span> </div></div>'
+            )
+            );
         }
     });
 }
