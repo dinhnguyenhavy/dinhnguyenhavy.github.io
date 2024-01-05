@@ -796,24 +796,24 @@ if ($("#clock1").length) {
     }
     var time = $('#clock1').data('date');
     $('#clock1').countdown(time.replace(/-/g,'/'), function(event) {
-        if(event.type == 'stoped'){
-            var together = new Date($('#clock1').data('date'));           
-            together.setHours(0);                           
-            together.setMinutes(0);             
-            together.setSeconds(0);                 
-            together.setMilliseconds(0);
-            setInterval(function() {
-                timeElapse(together);
-            }, 1000);
-        }else{
-            var $this = $(this).html(event.strftime(''
-            + '<div class="box"><div><div class="time">%D</div> <span>'+ $('#clock1').data('text-day') +'</span> </div></div>'
-            // + '<div class="box"><div><div class="time">%H</div> <span>'+ $('#clock1').data('text-hour') +'</span> </div></div>'
-            // + '<div class="box"><div><div class="time">%M</div> <span>'+ $('#clock1').data('text-minute') +'</span> </div></div>'
-            // + '<div class="box"><div><div class="time">%S</div> <span>'+ $('#clock1').data('text-second') +'</span> </div></div>'
-            )
-            );
-        }
+        // if(event.type == 'stoped'){
+        //     var together = new Date($('#clock1').data('date'));           
+        //     together.setHours(0);                           
+        //     together.setMinutes(0);             
+        //     together.setSeconds(0);                 
+        //     together.setMilliseconds(0);
+        //     setInterval(function() {
+        //         timeElapse(together);
+        //     }, 1000);
+        // } else {
+        //     var $this = $(this).html(event.strftime(''
+        //     + '<div class="box"><div><div class="time">%D</div> <span>'+ $('#clock1').data('text-day') +'</span> </div></div>'
+        //     // + '<div class="box"><div><div class="time">%H</div> <span>'+ $('#clock1').data('text-hour') +'</span> </div></div>'
+        //     // + '<div class="box"><div><div class="time">%M</div> <span>'+ $('#clock1').data('text-minute') +'</span> </div></div>'
+        //     // + '<div class="box"><div><div class="time">%S</div> <span>'+ $('#clock1').data('text-second') +'</span> </div></div>'
+        //     )
+        //     );
+        // }
     });
 }
 function masonryGridSetting() {

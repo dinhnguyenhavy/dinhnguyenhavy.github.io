@@ -38,6 +38,7 @@
 <body>
 
     <div class="page-wrapper">
+        <!--   
         <div class="preloader">
             <div class="vertical-centered-box">
                 <div class="content">
@@ -45,25 +46,25 @@
                     <div class="loader-line-mask">
                         <div class="loader-line"></div>
                     </div>
-                    <!-- <img src="templates/template17/images/favicon.png" alt=""> -->
+                    <!- - <img src="templates/template17/images/favicon.png" alt=""> - ->
                     <img src="./data/loading.png" alt="">
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
                 </div>
-                <h2 class="font-family-title2" style="font-family: 'MonteCarlo', cursive;font-size:56px !important"><span>Đinh Hiền</span> <img height="50" src="album/heart.gif"> <span>Nguyễn Huyền</span></h1>
+                <h2 class="font-family-title2" style="font-family: 'MonteCarlo', cursive;font-size:56px !important"><span>Đinh Hiền</span> </br><img height="50" src="album/heart.gif"> </br><span>Nguyễn Huyền</span></h1>
                 <p id="weddingDate" style="font-size: 25px; text-align: center;font-family: 'Tourney', cursive;font-weight: bold;text-transform: uppercase;padding-top: 15px;">
                     December 09, 2022
                 </p>
 
                 <h2 class="font-family-title2" style="font-size:48px !important">Đinh Nguyễn Hà Vy</h2>
-                <h1 class="font-family-title2" style="font-size:36px !important"><span>- Sữa -</span></h1>
-                <p style="font-size:32px !important">04/08/2023</p>
+                <!-- <h1 class="font-family-title2" style="font-size:36px !important"><span>- Sữa -</span></h1> -->
+                <p id="birthday" style="font-size:32px !important">04/08/2023</p>
                 <div class="row">
                     <div class="wpo-section-title-s2">
                         <div class="section-title-img">
@@ -74,8 +75,10 @@
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="clock-grids">
-                            <div id="clock1" data-date="2023-08-04" data-text-day="Ngày" data-text-hour="Giờ"
-                                data-text-minute="Phút" data-text-second="Giây"></div>
+                            <div id="clock1" data-date="2023-08-04" data-text-day="" data-text-hour="Giờ"
+                                data-text-minute="Phút" data-text-second="Giây">
+                                <div class="box"><div><div class="time"><h1 class="font-family-title2" style="font-size:36px !important"><span>Sữa</span></h1></div> <span> </span> </div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,7 +320,7 @@
             var div = document.getElementById(month);
             console.log(div.innerHTML);
 
-            for (let i = 1; i < count; i++) {
+            for (let i = 1; i <= count; i++) {
                 const msgHTML = `
                 <div class="grid grid-item">
                     <div class="img-holder">
@@ -340,7 +343,7 @@
         }
 
         addPhotos('202308', 53);
-        addPhotos('202309', 183);
+        addPhotos('202309', 182);
         addPhotos('202310', 136);
         addPhotos('202311', 163);
         addPhotos('202312', 91);
@@ -354,14 +357,26 @@
 
     <script type="text/javascript">
         function countingDate() {
-            var weddingDate = new Date(2022, 12, 9), 
-                now = new Date;  
+            const oneDay = 24 * 60 * 60 * 1000;
 
-            var count = Math.round((now - weddingDate) / (1000 * 60 * 60 * 24)); 
-            console.log(count);
+            //
+            var weddingDate = new Date('2022-12-09'), now = new Date;  
+
+            const weddingDays = Math.round(Math.abs((now - weddingDate) / oneDay));
+            console.log(weddingDays);
 
             var div = document.getElementById('weddingDate');
-            div.innerHTML += ' (' + count + ')';
+            div.innerHTML += ' (' + weddingDays + ')';
+
+            //
+            var dateOfBirth = new Date('2023-08-04'); 
+
+            const bornDays = Math.round(Math.abs((now - dateOfBirth) / oneDay));
+            console.log(bornDays);
+
+            var div = document.getElementById('birthday');
+            div.innerHTML += ' (' + bornDays + ')';
+            
         }
 
         countingDate();
