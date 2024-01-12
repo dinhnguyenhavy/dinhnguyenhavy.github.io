@@ -43,7 +43,7 @@
 
     <div class="page-wrapper">
           
-        <!-- <div class="preloader">
+        <div class="preloader">
             <div class="vertical-centered-box">
                 <div class="content">
                     <div class="loader-circle"></div>
@@ -53,17 +53,17 @@
                     <img src="./data/loading.png" alt="">
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
                 </div>
-                <!-- <h2 class="font-family-title2" style="font-family: 'MonteCarlo', cursive;font-size:56px !important"><span>Đinh Hiền</span> </br><img height="50" src="album/heart.gif"> </br><span>Nguyễn Huyền</span></h1>
+                <h2 class="font-family-title2" style="font-family: 'MonteCarlo', cursive;font-size:56px !important"><span>Đinh Hiền</span> </br><img height="50" src="album/heart.gif"> </br><span>Nguyễn Huyền</span></h1>
                 <p id="weddingDate" style="font-size: 25px; text-align: center;font-family: 'Tourney', cursive;font-weight: bold;text-transform: uppercase;padding-top: 15px;">
                     December 09, 2022
-                </p> -->
+                </p>
 
                 <h2 class="font-family-title2" style="font-size:48px !important">Đinh Nguyễn Hà Vy</h2>
                 <h1 class="font-family-title2" style="font-size:36px !important"><span>- Sữa -</span></h1>
@@ -75,17 +75,18 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- 
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="clock-grids">
                             <div id="clock1" data-date="2023-08-04" data-text-day="Ngày" data-text-hour="Giờ"
                                 data-text-minute="Phút" data-text-second="Giây">
-                                <!-- <div class="box"><div><div class="time"><h1 class="font-family-title2" style="font-size:36px !important"><span>Sữa</span></h1></div> <span> </span> </div></div> -->
+                                <! -- <div class="box"><div><div class="time"><h1 class="font-family-title2" style="font-size:36px !important"><span>Sữa</span></h1></div> <span> </span> </div></div> -- >
                             </div>
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </section>
 
@@ -116,6 +117,7 @@
             </div>
         </section>
 
+        <!-- Tháng 8 START -->
         <section class="wpo-wedding-date">
             <div class="container">
                 <div class="section-title-simg">
@@ -145,9 +147,13 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center">
+                <a href="#" class="photo-album-link">Xem Album</a>
+            </div>
         </section>
 
-        <section class="wpo-wedding-date">
+        <!-- Tháng 9 START -->
+        <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
@@ -176,9 +182,13 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center">
+                <a href="#" class="photo-album-link">Xem Album</a>
+            </div>
         </section>
 
-        <section class="wpo-wedding-date">
+        <!-- Tháng 10 START -->
+        <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
@@ -207,9 +217,13 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center">
+                <a href="#" class="photo-album-link">Xem Album</a>
+            </div>
         </section>
 
-        <section class="wpo-wedding-date">
+        <!-- Tháng 11 START -->
+        <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
@@ -238,9 +252,13 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center">
+                <a href="#" class="photo-album-link">Xem Album</a>
+            </div>
         </section>
 
-        <section class="wpo-wedding-date">
+        <!-- Tháng 12 START -->
+        <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
@@ -269,10 +287,14 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center">
+                <a href="#" class="photo-album-link">Xem Album</a>
+            </div>
         </section>
 
 
-        <section class="wpo-wedding-date">
+        <!-- Tháng 1/2024 START -->
+        <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <div class="section-title-simg">
                     <img src="templates/template17/images/section-title2.png" alt="">
@@ -300,8 +322,12 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center">
+                <a href="#" class="photo-album-link">Xem Album</a>
+            </div>
         </section>
 
+        <!-- To be continuous... -->
         <section class="wpo-wedding-date section-padding">
             <div class="container">
                 <h2 class="font-family-title2" style="font-size:48px !important">To be continuous...</h2>
@@ -346,12 +372,21 @@
             return root.querySelector(selector);
         }
 
+        const previewItem = 8;
+        /****
         addPhotos('202308', 53);
         addPhotos('202309', 182);
         addPhotos('202310', 136);
-        addPhotos('202311', 163);
+        addPhotos('202311', 161);
         addPhotos('202312', 91);
         addPhotos('202401', 16);
+        */
+        addPhotos('202308', previewItem);
+        addPhotos('202309', previewItem);
+        addPhotos('202310', previewItem);
+        addPhotos('202311', previewItem);
+        addPhotos('202312', previewItem);
+        addPhotos('202401', previewItem);
     </script>
 
     <script src="templates/template17/js/jquery-plugin-collectionbca9.js?v=20231107"></script>
@@ -363,23 +398,25 @@
         function countingDate() {
             const oneDay = 24 * 60 * 60 * 1000;
 
-            //
-            // var weddingDate = new Date('2022-12-09'), now = new Date;  
+            
+            var weddingDate = new Date('2022-12-09'), now = new Date;  
 
-            // const weddingDays = Math.round(Math.abs((now - weddingDate) / oneDay));
-            // console.log(weddingDays);
+            const weddingDays = Math.round(Math.abs((now - weddingDate) / oneDay / 30));
+            console.log(weddingDays);
 
-            // var div = document.getElementById('weddingDate');
-            // div.innerHTML += ' (' + weddingDays + ')';
+            var div = document.getElementById('weddingDate');
+            div.innerHTML += ' (' + weddingDays + 'M)';
 
-            //
+            
             var dateOfBirth = new Date('2023-08-04'), today = new Date;  
 
             const bornDays = Math.round(Math.abs((today - dateOfBirth) / oneDay));
+            const countMonth = Math.floor(bornDays/30);
+            const delta = bornDays - countMonth*30;
             console.log(bornDays);
 
             var div = document.getElementById('birthday');
-            div.innerHTML += ' (' + bornDays + ')';
+            div.innerHTML += ' (' + countMonth + ' tháng ' + delta + ' ngày)';
             
         }
 
