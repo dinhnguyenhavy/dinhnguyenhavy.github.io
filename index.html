@@ -420,14 +420,20 @@
             var dateOfBirth = new Date('2023-08-04'), today = new Date;  
 
             const bornDays = Math.round(Math.abs((today - dateOfBirth) / oneDay));
-            const countMonth = Math.floor(bornDays/30);
+            var countMonth = Math.floor(bornDays/30);
             const countYear = Math.floor(countMonth/12);
             const delta = bornDays - countMonth*30;
-            console.log(bornDays);
+            console.log(countYear);
 
             var div = document.getElementById('birthday');
             if (countYear > 0) {
-                div.innerHTML += '</br> (' + countYear + ' năm ' + countMonth + ' tháng ' + delta + ' ngày)';
+                countMonth = countMonth - countYear * 12;
+                if (countMonth > 0) {
+                    div.innerHTML += '</br> (' + countYear + ' năm ' + countMonth + ' tháng ' + delta + ' ngày)';
+                } else {
+                    div.innerHTML += '</br> (' + countYear + ' năm ' + delta + ' ngày)';
+                }
+                
             } else {
                 div.innerHTML += '</br> (' + countMonth + ' tháng ' + delta + ' ngày)';
             }
