@@ -34,8 +34,17 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9L0ZFE1PJ"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-K9L0ZFE1PJ');</script>
 
-    <script src="templates/template17/js/rocket-loader.min.js"
-    data-cf-settings="2a7481cf9624a227a68ffacf-|49" defer></script>
+    <script src="templates/template17/js/rocket-loader.min.js" data-cf-settings="2a7481cf9624a227a68ffacf-|49" defer></script>
+
+    <!-- lightgallery -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lightgallery-bundle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/video/lg-video.umd.js"></script> -->
+    <!-- lightgallery -->
 
 </head>
 
@@ -148,7 +157,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="photo-album-link">Xem Album</a>
+                <button type="button" class="btn btn-success" id="lightgallery-1">Xem Album</button>
             </div>
         </section>
 
@@ -183,7 +192,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="photo-album-link">Xem Album</a>
+                <button type="button" class="btn btn-success" id="lightgallery-2">Xem Album</button>
             </div>
         </section>
 
@@ -218,7 +227,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="photo-album-link">Xem Album</a>
+                <button type="button" class="btn btn-success" id="lightgallery-3">Xem Album</button>
             </div>
         </section>
 
@@ -253,7 +262,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="photo-album-link">Xem Album</a>
+                <button type="button" class="btn btn-success" id="lightgallery-4">Xem Album</button>
             </div>
         </section>
 
@@ -288,7 +297,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="photo-album-link">Xem Album</a>
+                <button type="button" class="btn btn-success" id="lightgallery-5">Xem Album</button>
             </div>
         </section>
 
@@ -323,7 +332,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="photo-album-link">Xem Album</a>
+                <button type="button" class="btn btn-success" id="lightgallery-6">Xem Album</button>
             </div>
         </section>
 
@@ -407,21 +416,81 @@
             var div = document.getElementById('weddingDate');
             div.innerHTML += ' (' + weddingDays + 'M)';
 
-            
+            //
             var dateOfBirth = new Date('2023-08-04'), today = new Date;  
 
             const bornDays = Math.round(Math.abs((today - dateOfBirth) / oneDay));
             const countMonth = Math.floor(bornDays/30);
+            const countYear = Math.floor(countMonth/12);
             const delta = bornDays - countMonth*30;
             console.log(bornDays);
 
             var div = document.getElementById('birthday');
-            div.innerHTML += ' (' + countMonth + ' tháng ' + delta + ' ngày)';
+            if (countYear > 0) {
+                div.innerHTML += '</br> (' + countYear + ' năm ' + countMonth + ' tháng ' + delta + ' ngày)';
+            } else {
+                div.innerHTML += '</br> (' + countMonth + ' tháng ' + delta + ' ngày)';
+            }
             
         }
 
         countingDate();
     </script>
+
+    <!-- lightgallery -->
+    <script type="text/javascript">
+        function openLightgallery() {
+            const $dynamicGallery = document.getElementById("lightgallery-1");
+            const dynamicGallery = window.lightGallery($dynamicGallery, {
+            dynamic: true,
+            plugins: [lgZoom, lgVideo, lgThumbnail],
+            dynamicEl: [
+                {
+                src:
+                    "https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80",
+                responsive:
+                    "https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80 800",
+                thumb:
+                    "https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80",
+                subHtml: `<div class="lightGallery-captions">
+                            <h4>Photo by <a href="https://unsplash.com/@brookecagle">Brooke Cagle</a></h4>
+                            <p>Description of the slide 1</p>
+                        </div>`
+                },
+                {
+                video: {"source": [{"src":"https://www.lightgalleryjs.com//videos/video1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}},
+                thumb:
+                    "https://www.lightgalleryjs.com//images/demo/html5-video-poster.jpg",
+                subHtml: `<div class="lightGallery-captions">
+                            <h4>Photo by <a href="https://unsplash.com/@brookecagle">Brooke Cagle</a></h4>
+                            <p>Description of the slide 2</p>
+                        </div>`
+                },
+                {
+                src:
+                    "https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+                responsive:
+                    "https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800",
+                thumb:
+                    "https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80"
+                },
+                {
+                src: "//www.youtube.com/watch?v=cTQ3Ko9ZKg8",
+                poster: "https://img.youtube.com/vi/egyIeygdS_E/maxresdefault.jpg",
+                thumb: "https://img.youtube.com/vi/egyIeygdS_E/maxresdefault.jpg"
+                }
+            ]
+            });
+            $dynamicGallery.addEventListener("click", () => {
+                dynamicGallery.openGallery(0);
+            });
+        }
+
+        openLightgallery();
+
+    </script>
+    <!-- lightgallery -->
+
 </body>
 
 </html>
